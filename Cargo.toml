@@ -6,6 +6,12 @@ resolver = "2"
 name = "fusion-imu"
 version = "0.1.0"
 edition = "2021"
+authors = ["Alexander van Saase <avsaase@gmail.com>"]
+description = "Rust wrapper for the Fusion AHRS C library"
+categories = ["api-bindings"]
+keywords = ["no-std", "ahrs", "imu"]
+license = "MIT"
+repository = "https://github.com/avsaase/fusion-imu"
 
 [dependencies]
 fusion-imu-sys = { path = "./fusion-imu-sys" }

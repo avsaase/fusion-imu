@@ -1,7 +1,8 @@
 //! # fusion-sys
 //!
-//! This library provides generated Rust bindings to the Fusion C library. You
-//! probably want to use the higher-level wrappers in `fusion` instead.
+//! This library provides generated Rust bindings to the Fusion AHRS C library. You
+//! probably want to use the high-level wrappers in
+//! [`fusion-imu`](https://crates.io/crates/fusion-imu) instead.
 
 #![no_std]
 #![allow(non_upper_case_globals)]
