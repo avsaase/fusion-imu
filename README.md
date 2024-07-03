@@ -12,7 +12,7 @@ When cross-compiling for other targets you may get an error like:
 fatal error: 'math.h' file not found
 ```
 
-This can be solved by setting the `FUSION_IMU_INCLUDE_PATH` environment variable to the folder that contains the `math.h` header for the target you're compiling for.
+To solve this, set the `FUSION_IMU_INCLUDE_PATH` environment variable to the folder that contains the `math.h` header for the target you're compiling for.
 
 ## Features
 
