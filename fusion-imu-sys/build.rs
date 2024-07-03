@@ -16,7 +16,7 @@ fn main() {
         .wrap_static_fns_path(&out_path.join("extern.c"))
         .use_core();
 
-    if let Ok(path) = env::var("FUSION_HEADER_INCLUDE_PATH") {
+    if let Ok(path) = env::var("FUSION_IMU_INCLUDE_PATH") {
         builder = builder.clang_arg(format!("-I{}", path));
     }
 

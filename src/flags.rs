@@ -8,28 +8,28 @@ pub struct Flags {
 impl Flags {
     /// Initialising flag.
     ///
-    /// See README for details.
+    /// See <https://github.com/xioTechnologies/Fusion> for details.
     pub fn initialising(&self) -> bool {
         self.inner.initialising
     }
 
     /// Angular rate recovery flag.
     ///
-    /// See README for details.
+    /// See <https://github.com/xioTechnologies/Fusion> for details.
     pub fn angular_rate_recovery(&self) -> bool {
         self.inner.angularRateRecovery
     }
 
     /// Acceleration recovery flag.
     ///
-    /// See README for details.
+    /// See <https://github.com/xioTechnologies/Fusion> for details.
     pub fn acceleration_recovery(&self) -> bool {
         self.inner.accelerationRecovery
     }
 
     /// Magnetic recovery flag.
     ///
-    /// See README for details.
+    /// See <https://github.com/xioTechnologies/Fusion> for details.
     pub fn magnetic_recovery(&self) -> bool {
         self.inner.magneticRecovery
     }
