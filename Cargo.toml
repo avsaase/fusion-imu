@@ -14,7 +14,7 @@ license = "MIT"
 repository = "https://github.com/avsaase/fusion-imu"
 
 [dependencies]
-fusion-imu-sys = { path = "./fusion-imu-sys" }
+fusion-imu-sys = { version = "0.1.0", path = "./fusion-imu-sys" }
 serde = { version = "1.0" , features = ["derive"], optional = true }
 defmt = { version = "0.3", optional = true }
 
