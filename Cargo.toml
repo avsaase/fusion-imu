@@ -1,0 +1,21 @@
+[workspace]
+members = ["fusion-imu-sys"]
+resolver = "2"
+
+[package]
+name = "fusion-imu"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+fusion-imu-sys = { path = "./fusion-imu-sys" }
+serde = { version = "1.0" , features = ["derive"], optional = true }
+defmt = { version = "0.3", optional = true }
+
+[dev-dependencies]
+plotpy = "1.0.0"
+
+[features]
+default = []
+serde = ["dep:serde"]
+defmt-03 = ["dep:defmt"]

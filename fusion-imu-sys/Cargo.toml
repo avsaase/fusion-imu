@@ -1,0 +1,12 @@
+[package]
+name = "fusion-imu-sys"
+version = "0.1.0"
+edition = "2021"
+
+links = "fusion"
+
+[dependencies]
+
+[build-dependencies]
+bindgen = { version = "0.69.4", features = ["experimental"] }
+cc = "1.0.103"

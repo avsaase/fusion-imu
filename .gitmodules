@@ -1,0 +1,3 @@
+[submodule "fusion-imu-sys/Fusion"]
+	path = fusion-imu-sys/Fusion
+	url = https://github.com/xioTechnologies/Fusion.git
