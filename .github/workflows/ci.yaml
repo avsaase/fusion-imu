@@ -10,8 +10,7 @@ jobs:
         with:
             submodules: true
       - uses: dtolnay/rust-toolchain@stable
-      - uses: romnn/cargo-feature-combinations@main
-      - run: cargo fc check
+      - run: cargo check --all-features
 
   lints:
     name: cargo clippy
@@ -23,8 +22,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
-      - uses: romnn/cargo-feature-combinations@main
-      - run: cargo fc clippy
+      - run: cargo clippy --all-features
 
   test:
     name: cargo test
@@ -34,8 +32,7 @@ jobs:
         with:
             submodules: true
       - uses: dtolnay/rust-toolchain@stable
-      - uses: romnn/cargo-feature-combinations@main
-      - run: cargo fc test --workspace
+      - run: cargo test --all-features --workspace
 
   formatting:
     name: cargo fmt
