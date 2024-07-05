@@ -163,3 +163,9 @@ impl FusionAhrs {
         }
     }
 }
+
+impl Default for FusionAhrs {
+    fn default() -> Self {
+        Self::new()
+    }
+}

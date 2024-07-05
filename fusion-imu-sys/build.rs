@@ -13,7 +13,7 @@ fn main() {
         .blocklist_var("FP_.*")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .wrap_static_fns(true)
-        .wrap_static_fns_path(&out_path.join("extern.c"))
+        .wrap_static_fns_path(out_path.join("extern.c"))
         .use_core();
 
     if let Ok(path) = env::var("FUSION_IMU_INCLUDE_PATH") {
