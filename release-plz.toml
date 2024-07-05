@@ -1,0 +1,8 @@
+[workspace]
+changelog_update = false
+
+[[package]]
+name = "fusion-imu"
+changelog_update = true
+changelog_path = "./CHANGELOG.md"
+changelog_include = ["fusion-imu-sys"]
