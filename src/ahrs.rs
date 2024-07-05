@@ -1,4 +1,4 @@
-use core::mem::{transmute, MaybeUninit};
+use core::mem::MaybeUninit;
 
 use fusion_imu_sys as sys;
 
@@ -59,9 +59,9 @@ impl FusionAhrs {
         unsafe {
             sys::FusionAhrsUpdate(
                 &mut self.inner as *mut sys::FusionAhrs,
-                transmute(gyroscope),
-                transmute(accelerometer),
-                transmute(magnetometer),
+                gyroscope.into(),
+                accelerometer.into(),
+                magnetometer.into(),
                 delta_time,
             )
         }
@@ -83,8 +83,8 @@ impl FusionAhrs {
         unsafe {
             sys::FusionAhrsUpdateNoMagnetometer(
                 &mut self.inner as *mut sys::FusionAhrs,
-                transmute(gyroscope),
-                transmute(accelerometer),
+                gyroscope.into(),
+                accelerometer.into(),
                 delta_time,
             )
         }
@@ -108,8 +108,8 @@ impl FusionAhrs {
         unsafe {
             sys::FusionAhrsUpdateExternalHeading(
                 &mut self.inner,
-                transmute(gyroscope),
-                transmute(accelerometer),
+                gyroscope.into(),
+                accelerometer.into(),
                 heading,
                 delta_time,
             )
@@ -129,19 +129,14 @@ impl FusionAhrs {
 
     /// Returns the quaternion describing the sensor relative to the Earth.
     pub fn get_quaternion(&self) -> Quaternion {
-        unsafe {
-            let quaternion = sys::FusionAhrsGetQuaternion(&self.inner as *const sys::FusionAhrs);
-            transmute(quaternion)
-        }
+        unsafe { sys::FusionAhrsGetQuaternion(&self.inner as *const sys::FusionAhrs).into() }
     }
 
     /// Returns the linear acceleration measurement equal to the accelerometer
     /// measurement with the 1g of gravity removed.
     pub fn get_linear_acceleration(&self) -> Vector {
         unsafe {
-            let vector =
-                sys::FusionAhrsGetLinearAcceleration(&self.inner as *const sys::FusionAhrs);
-            transmute(vector)
+            sys::FusionAhrsGetLinearAcceleration(&self.inner as *const sys::FusionAhrs).into()
         }
     }
 
@@ -149,10 +144,7 @@ impl FusionAhrs {
     /// measurement in the Earth coordinate frame with the 1g of gravity
     /// removed.
     pub fn get_earth_acceleration(&self) -> Vector {
-        unsafe {
-            let vector = sys::FusionAhrsGetEarthAcceleration(&self.inner as *const sys::FusionAhrs);
-            transmute(vector)
-        }
+        unsafe { sys::FusionAhrsGetEarthAcceleration(&self.inner as *const sys::FusionAhrs).into() }
     }
 
     /// Returns the AHRS algorithm internal states.

@@ -1,5 +1,3 @@
-use core::mem::transmute;
-
 use fusion_imu_sys as sys;
 
 use crate::{Matrix, Vector};
@@ -18,12 +16,13 @@ pub fn calibration_inertial(
     offset: Vector,
 ) -> Vector {
     unsafe {
-        transmute(sys::FusionCalibrationInertial(
-            transmute(uncalibrated),
-            transmute(misalignment),
-            transmute(sensitivity),
-            transmute(offset),
-        ))
+        sys::FusionCalibrationInertial(
+            uncalibrated.into(),
+            misalignment.into(),
+            sensitivity.into(),
+            offset.into(),
+        )
+        .into()
     }
 }
 
@@ -35,10 +34,7 @@ pub fn calibration_inertial(
 /// - `hard_iron`: Hard-iron offset vector.
 pub fn calibration_magnetic(uncalibrated: Vector, soft_iron: Matrix, hard_iron: Vector) -> Vector {
     unsafe {
-        transmute(sys::FusionCalibrationMagnetic(
-            transmute(uncalibrated),
-            transmute(soft_iron),
-            transmute(hard_iron),
-        ))
+        sys::FusionCalibrationMagnetic(uncalibrated.into(), soft_iron.into(), hard_iron.into())
+            .into()
     }
 }
