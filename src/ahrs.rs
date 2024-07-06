@@ -132,6 +132,13 @@ impl FusionAhrs {
         unsafe { sys::FusionAhrsGetQuaternion(&self.inner as *const sys::FusionAhrs).into() }
     }
 
+    /// Sets the quaternion describing the sensor relative to the Earth.
+    pub fn set_quaternion(&mut self, quaternion: Quaternion) {
+        unsafe {
+            sys::FusionAhrsSetQuaternion(&mut self.inner as *mut sys::FusionAhrs, quaternion.into())
+        }
+    }
+
     /// Returns the linear acceleration measurement equal to the accelerometer
     /// measurement with the 1g of gravity removed.
     pub fn get_linear_acceleration(&self) -> Vector {
