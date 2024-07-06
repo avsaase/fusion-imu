@@ -1,5 +1,6 @@
 [workspace]
 changelog_update = false
+release_always = false
 
 [[package]]
 name = "fusion-imu"
