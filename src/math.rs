@@ -190,7 +190,7 @@ mod tests {
             Vector {
                 x: 1.0,
                 y: 2.0,
-                z: 3.0
+                z: 3.0,
             }
         );
     }
@@ -213,7 +213,7 @@ mod tests {
             Vector {
                 x: 1.0,
                 y: 2.0,
-                z: 3.0
+                z: 3.0,
             }
         );
     }
@@ -265,7 +265,7 @@ mod tests {
                 w: 1.0,
                 x: 2.0,
                 y: 3.0,
-                z: 4.0
+                z: 4.0,
             }
         );
     }
@@ -290,7 +290,7 @@ mod tests {
                 w: 1.0,
                 x: 2.0,
                 y: 3.0,
-                z: 4.0
+                z: 4.0,
             }
         );
     }
@@ -350,7 +350,7 @@ mod tests {
                 yz: 6.0,
                 zx: 7.0,
                 zy: 8.0,
-                zz: 9.0
+                zz: 9.0,
             }
         );
     }
@@ -385,7 +385,7 @@ mod tests {
                 yz: 6.0,
                 zx: 7.0,
                 zy: 8.0,
-                zz: 9.0
+                zz: 9.0,
             }
         );
     }
@@ -477,7 +477,7 @@ mod tests {
             Euler {
                 roll: 1.0,
                 pitch: 2.0,
-                yaw: 3.0
+                yaw: 3.0,
             }
         );
     }
@@ -509,7 +509,7 @@ mod tests {
         let sys_euler = sys::FusionEuler::from(euler);
 
         let values = unsafe { sys_euler.angle };
-        assert_eq!(values.roll, 1.0,);
+        assert_eq!(values.roll, 1.0);
         assert_eq!(values.pitch, 2.0);
         assert_eq!(values.yaw, 3.0);
     }
