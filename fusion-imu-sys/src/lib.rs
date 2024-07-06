@@ -1,4 +1,4 @@
-//! # fusion-sys
+//! # fusion-imu-sys
 //!
 //! This library provides generated Rust bindings to the Fusion AHRS C library. You
 //! probably want to use the high-level wrappers in
@@ -13,3 +13,15 @@
 #![allow(clippy::approx_constant)]
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn bindings_are_generated() {
+        let _vector = FusionVector {
+            array: [0.0, 0.0, 0.0],
+        };
+    }
+}
