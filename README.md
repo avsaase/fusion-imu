@@ -1,5 +1,10 @@
 # Fusion AHRS
 
+[![Crates.io](https://img.shields.io/crates/v/fusion-imu.svg)](https://crates.io/crates/fusion-imu)
+[![Docs](https://docs.rs/fusion-imu/badge.svg)](https://docs.rs/fusion-imu/latest/fusion-imu/)
+[![CI](https://github.com/avsaase/fusion-imu/workflows/CI/badge.svg)](https://github.com/avsaase/fusion-imu/actions)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/avsaase/fusion-imu)
+
 This library provides idiomatic Rust bindings to the Fusion AHRS C library. See <https://github.com/xioTechnologies/Fusion> for algorithm details.
 
 ## Usage
