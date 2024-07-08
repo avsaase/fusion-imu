@@ -1,9 +1,4 @@
-//! # fusion-imu-sys
-//!
-//! This library provides generated Rust bindings to the Fusion AHRS C library. You
-//! probably want to use the high-level wrappers in
-//! [`fusion-imu`](https://crates.io/crates/fusion-imu) instead.
-
+#![doc = include_str!("../README.md")]
 #![no_std]
 #![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
