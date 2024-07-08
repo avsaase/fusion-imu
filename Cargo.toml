@@ -15,8 +15,8 @@ repository = "https://github.com/avsaase/fusion-imu"
 
 [dependencies]
 fusion-imu-sys = { version = "0.1.0", path = "./fusion-imu-sys" }
-serde = { version = "1.0" , features = ["derive"], optional = true }
-defmt = { version = "0.3", optional = true }
+serde = { version = "1.0.204", default-features = false, features = ["derive"], optional = true }
+defmt = { version = "0.3.8", optional = true }
 
 [dev-dependencies]
 plotpy = "1.0.0"
