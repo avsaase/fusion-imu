@@ -1,6 +1,6 @@
 [package]
 name = "fusion-imu-sys"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Generated bindings for the Fusion AHRS C library"
 categories = ["external-ffi-bindings", "algorithms"]

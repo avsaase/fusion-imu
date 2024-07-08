@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2](https://github.com/avsaase/fusion-imu/compare/fusion-imu-v0.1.1...fusion-imu-v0.1.2) - 2024-07-08
+
+### Added
+- add FusionOffset bindings
+
+### Fixed
+- no_std compatibility because of serde default features
+
+### Other
+- add readme to fusion-imu-sys
+
 ## [0.1.1](https://github.com/avsaase/fusion-imu/compare/fusion-imu-v0.1.0...fusion-imu-v0.1.1) - 2024-07-06
 
 ### Other

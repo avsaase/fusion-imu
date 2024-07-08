@@ -139,7 +139,7 @@ dependencies = [
 
 [[package]]
 name = "fusion-imu"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "defmt",
  "fusion-imu-sys",
@@ -149,7 +149,7 @@ dependencies = [
 
 [[package]]
 name = "fusion-imu-sys"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "bindgen",
  "cc",

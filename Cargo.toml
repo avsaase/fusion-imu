@@ -4,7 +4,7 @@ resolver = "2"
 
 [package]
 name = "fusion-imu"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Alexander van Saase <avsaase@gmail.com>"]
 description = "Rust wrapper for the Fusion AHRS C library"
@@ -14,7 +14,7 @@ license = "MIT"
 repository = "https://github.com/avsaase/fusion-imu"
 
 [dependencies]
-fusion-imu-sys = { version = "0.1.0", path = "./fusion-imu-sys" }
+fusion-imu-sys = { version = "0.1.1", path = "./fusion-imu-sys" }
 serde = { version = "1.0.204", default-features = false, features = ["derive"], optional = true }
 defmt = { version = "0.3.8", optional = true }
 
