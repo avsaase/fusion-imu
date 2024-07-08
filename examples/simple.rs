@@ -4,7 +4,7 @@ use std::{
     path::Path,
 };
 
-use fusion_imu::{FusionAhrs, Vector};
+use fusion_imu::{FusionAhrs, FusionOffset, Vector};
 use plotpy::{Curve, Legend, Plot};
 
 fn main() {
@@ -13,6 +13,7 @@ fn main() {
     let lines = reader.lines();
 
     let mut fusion = FusionAhrs::new();
+    let mut offset = FusionOffset::new(100);
     let mut prev_time = 0.0;
 
     let mut ts = Vec::new();
@@ -49,6 +50,7 @@ fn main() {
             y: elements.next().unwrap(),
             z: elements.next().unwrap(),
         };
+        let gyroscope = offset.update(gyroscope);
         fusion.update_no_magnetometer(gyroscope, accelerometer, delta_time);
 
         let quat = fusion.get_quaternion().to_euler();
@@ -145,5 +147,5 @@ fn main() {
         .add(&legend);
 
     let path = Path::new("/tmp/fusion/examples_plots").join("plot.svg");
-    plot.save_and_show(&path).unwrap();
+    plot.set_show_errors(true).save_and_show(&path).unwrap();
 }
